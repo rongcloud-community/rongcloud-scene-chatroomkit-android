@@ -38,3 +38,5 @@ dependencies {
 
     compileOnly 'cn.rongcloud.sdk:rccorekit_lib:0.0.1'
 }
+
+//apply from: './bintray.gradle'
