@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vanniktech.emoji.EmojiTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_message"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:lineSpacingMultiplier="1.2"
+    android:paddingStart="12dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="8dp"
+    android:textColor="#FFFFFF"
+    android:textSize="12sp"
+    tools:background="#000"
+    tools:text="this is a message" />

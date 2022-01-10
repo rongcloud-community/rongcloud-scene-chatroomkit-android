@@ -1,0 +1,3 @@
+rootProject.name = "RCChatRoomKit"
+include ':app'
+include ':ChatRoomKit'

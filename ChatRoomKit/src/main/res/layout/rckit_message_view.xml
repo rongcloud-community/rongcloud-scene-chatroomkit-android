@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="12dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="85dp"
+    android:paddingBottom="5dp"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="10"
+        tools:listitem="@layout/rckit_item_message" />
+
+</merge>

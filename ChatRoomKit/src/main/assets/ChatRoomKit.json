@@ -1,0 +1,400 @@
+{
+  "messageView": {
+    "name": "消息区域",
+    "type": "RCContainer",
+    "value": {
+      "contentInsets": {
+        "name": "消息区域内边距",
+        "type": "RCInsets",
+        "value": {
+          "top": 12,
+          "bottom": 0,
+          "left": 12,
+          "right": 105
+        }
+      },
+      "maxVisibleCount": {
+        "name": "最大消息数量",
+        "type": "RCNumber",
+        "value": 50
+      },
+      "defaultBubbleColor": {
+        "name": "气泡背景颜色",
+        "type": "RCColor",
+        "value": {
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "alpha": 0.3
+        }
+      },
+      "bubbleInsets": {
+        "name": "气泡内边距",
+        "type": "RCInsets",
+        "value": {
+          "top": 7,
+          "bottom": 7,
+          "left": 12,
+          "right": 12
+        }
+      },
+      "defaultBubbleCorner": {
+        "name": "气泡圆角",
+        "type": "RCCorner",
+        "value": {
+          "topLeft": 0,
+          "topRight": 6,
+          "bottomLeft": 6,
+          "bottomRight": 6
+        }
+      },
+      "defaultBubbleTextColor": {
+        "name": "气泡文字颜色",
+        "type": "RCColor",
+        "value": {
+          "red": 255,
+          "green": 255,
+          "blue": 255,
+          "alpha": 0.7
+        }
+      },
+      "defaultBubbleTextFont": {
+        "name": "气泡文字大小",
+        "type": "RCFont",
+        "value": {
+          "size": 12,
+          "weight": 400
+        }
+      },
+      "bubbleSpace": {
+        "name": "气泡间距",
+        "type": "RCNumber",
+        "value": 5
+      },
+      "voiceIconColor": {
+        "name": "气泡内语音图标的颜色",
+        "type": "RCColor",
+        "value": {
+          "red": 255,
+          "green": 255,
+          "blue": 255,
+          "alpha": 1
+        }
+      }
+    }
+  },
+  "toolBar": {
+    "name": "底部工具栏",
+    "type": "RCContainer",
+    "value": {
+      "backgroundColor": {
+        "name": "工具栏背景色",
+        "type": "RCColor",
+        "value": {
+          "red": 0,
+          "green": 0,
+          "blue": 0,
+          "alpha": 0
+        }
+      },
+      "contentInsets": {
+        "name": "工具栏内边距",
+        "type": "RCInsets",
+        "value": {
+          "top": 0,
+          "bottom": 0,
+          "left": 12,
+          "right": 5
+        }
+      },
+      "chatButtonAttributes": {
+        "name": "聊天按钮",
+        "type": "RCAttributes",
+        "value": {
+          "text": {
+            "name": "消息提示语",
+            "type": "RCString",
+            "value": "聊聊吧..."
+          },
+          "size": {
+            "name": "消息按钮大小",
+            "type": "RCSize",
+            "value": {
+              "width": 105,
+              "height": 36,
+              "widthMode": -2,
+              "heightMode": 0
+            }
+          },
+          "insets": {
+            "name": "消息按钮内边距",
+            "type": "RCInsets",
+            "value": {
+              "top": 0,
+              "bottom": 0,
+              "left": 5,
+              "right": 15
+            }
+          },
+          "textColor": {
+            "name": "消息按钮文字颜色",
+            "type": "RCColor",
+            "value": {
+              "red": 255,
+              "green": 255,
+              "blue": 255,
+              "alpha": 1
+            }
+          },
+          "font": {
+            "name": "消息按钮文字大小",
+            "type": "RCFont",
+            "value": {
+              "size": 14,
+              "weight": 400
+            }
+          },
+          "drawable": {
+            "name": "消息按钮背景图形",
+            "type": "RCDrawable",
+            "value": {
+              "shape": 0,
+              "color": {
+                "red": 255,
+                "green": 255,
+                "blue": 255,
+                "alpha": 0.26
+              },
+              "strokeWidth": 0,
+              "strokeColor": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "alpha": 0
+              },
+              "corner": {
+                "topLeft": 18,
+                "topRight": 18,
+                "bottomLeft": 18,
+                "bottomRight": 18
+              }
+            }
+          }
+        }
+      },
+      "recordButtonEnable": {
+        "name": "录音功能是否可用",
+        "type": "RCBoolean",
+        "value": true
+      },
+      "recordQuality": {
+        "name": "录音质量",
+        "type": "RCRadio",
+        "value": {
+          "radios": [
+            {
+              "name": "低",
+              "type": "RCNumber",
+              "value": 0
+            },
+            {
+              "name": "高",
+              "type": "RCNumber",
+              "value": 1
+            }
+          ],
+          "selected": {
+            "name": "低",
+            "type": "RCNumber",
+            "value": 0
+          }
+        }
+      },
+      "recordPosition": {
+        "name": "录音按钮位置",
+        "type": "RCRadio",
+        "value": {
+          "radios": [
+            {
+              "name": "左",
+              "type": "RCNumber",
+              "value": 0
+            },
+            {
+              "name": "右",
+              "type": "RCNumber",
+              "value": 1
+            }
+          ],
+          "selected": {
+            "name": "左",
+            "type": "RCNumber",
+            "value": 0
+          }
+        }
+      },
+      "recordMaxDuration": {
+        "name": "最大录音时长",
+        "type": "RCNumber",
+        "value": 60
+      },
+      "buttonArray": {
+        "name": "底部按钮集合",
+        "type": "RCList",
+        "value": [
+          {
+            "icon": {
+              "name": "按钮1",
+              "type": "RCImage",
+              "value": {
+                "local": "rckit_ic_toolbar_btn1.png",
+                "remote": ""
+              }
+            },
+            "hasBadge": {
+              "name": "是否有角标",
+              "type": "RCBoolean",
+              "value": false
+            }
+          },
+          {
+            "icon": {
+              "name": "按钮2",
+              "type": "RCImage",
+              "value": {
+                "local": "rckit_ic_toolbar_btn2.png",
+                "remote": ""
+              }
+            },
+            "hasBadge": {
+              "name": "是否有角标",
+              "type": "RCBoolean",
+              "value": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "inputBar": {
+    "name": "消息输入和发送框",
+    "type": "RCContainer",
+    "value": {
+      "backgroundColor": {
+        "name": "输入工具栏背景色",
+        "type": "RCColor",
+        "value": {
+          "red": 86,
+          "green": 68,
+          "blue": 168,
+          "alpha": 1
+        }
+      },
+      "contentInsets": {
+        "name": "输入工具栏内边距",
+        "type": "RCInsets",
+        "value": {
+          "top": 7,
+          "bottom": 7,
+          "left": 12,
+          "right": 12
+        }
+      },
+      "inputTextMaxLength": {
+        "name": "可输入最大字数",
+        "type": "RCNumber",
+        "value": 50
+      },
+      "inputAttributes": {
+        "name": "输入框配置",
+        "type": "RCAttributes",
+        "value": {
+          "drawable": {
+            "name": "背景图形",
+            "type": "RCDrawable",
+            "value": {
+              "shape": 0,
+              "color": {
+                "red": 255,
+                "green": 255,
+                "blue": 255,
+                "alpha": 1
+              },
+              "strokeWidth": 0,
+              "strokeColor": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "alpha": 0
+              },
+              "corner": {
+                "topLeft": 8,
+                "topRight": 8,
+                "bottomLeft": 8,
+                "bottomRight": 8
+              }
+            }
+          },
+          "size": {
+            "name": "输入框大小",
+            "type": "RCSize",
+            "value": {
+              "width": 0,
+              "height": 36,
+              "widthMode": -1,
+              "heightMode": 0
+            }
+          },
+          "font": {
+            "name": "输入框文字大小",
+            "type": "RCFont",
+            "value": {
+              "size": 14,
+              "weight": 400
+            }
+          },
+          "textColor": {
+            "name": "输入框内文字颜色",
+            "type": "RCColor",
+            "value": {
+              "red": 51,
+              "green": 51,
+              "blue": 51,
+              "alpha": 1
+            }
+          },
+          "hintText": {
+            "name": "输入框内提示文字",
+            "type": "RCString",
+            "value": "聊聊吧..."
+          },
+          "hintColor": {
+            "name": "输入框内提示文字颜色",
+            "type": "RCColor",
+            "value": {
+              "red": 153,
+              "green": 153,
+              "blue": 153,
+              "alpha": 1
+            }
+          },
+          "insets": {
+            "name": "输入框内边距",
+            "type": "RCInsets",
+            "value": {
+              "left": 10,
+              "top": 5,
+              "right": 10,
+              "bottom": 5
+            }
+          }
+        }
+      },
+      "emojiEnable": {
+        "name": "是否支持emoji",
+        "type": "RCBoolean",
+        "value": true
+      }
+    }
+  }
+}

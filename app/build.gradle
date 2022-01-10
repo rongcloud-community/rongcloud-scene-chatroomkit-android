@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "cn.rongcloud.scenekitdemo"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // hifive的配置
+            manifestPlaceholders = [
+                    HIFIVE_APPID     : "6f78321c38ee4db3bb4dae7e56d464b1",
+                    HIFIVE_SERVERCODE: "ca41ad68e8054610a2"
+            ]
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation project(path: ':ChatRoomKit')
+
+    // 模拟语聊房需要的库
+    implementation 'cn.rongcloud.sdk:voiceroom_lib:2.0.0'
+    implementation 'cn.rongcloud.sdk:im_lib:5.1.5'
+    implementation 'cn.rongcloud.sdk:rtc_lib:5.1.10'
+
+    implementation 'cn.rongcloud.sdk:rccorekit_lib:0.0.1'
+}

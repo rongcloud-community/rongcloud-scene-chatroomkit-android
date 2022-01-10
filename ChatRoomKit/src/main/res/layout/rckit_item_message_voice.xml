@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_message"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingStart="12dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="8dp"
+    tools:background="#000"
+    tools:text="this is a message">
+
+    <com.vanniktech.emoji.EmojiTextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lineSpacingMultiplier="1.2"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        tools:background="#000"
+        tools:text="张三：" />
+
+    <ImageView
+        android:id="@+id/iv_voice"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@drawable/rckit_play_voice_animation" />
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        tools:text="12''" />
+</LinearLayout>

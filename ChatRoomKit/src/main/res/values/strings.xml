@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ChatRoomKit</string>
+    <string name="text_send">发送</string>
+    <string name="text_have_chat">聊聊吧...</string>
+    <string name="rckit_voice_rec">手指上滑，取消发送</string>
+    <string name="rckit_voice_too_long">录制时间超长</string>
+    <string name="rckit_voice_cancel">手指上滑，取消发送</string>
+    <string name="rckit_voice_short">录音时间太短</string>
+    <string name="rckit_permission_background_location_grant_tip">您需要提供后台位置权限，请在设置页面选择始终允许</string>
+    <string name="rckit_permission_camera">（相机）。</string>
+    <string name="rckit_permission_grant_needed">您需要在设置中打开权限</string>
+    <string name="rckit_permission_microphone">（麦克风）。</string>
+    <string name="rckit_permission_microphone_and_camera">（麦克风，相机）。</string>
+    <string name="rckit_confirm">确认</string>
+    <string name="rckit_cancel">取消</string>
+    <string name="rckit_not_prompt">不再提示</string>
+</resources>

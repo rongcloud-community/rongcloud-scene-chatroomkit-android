@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="12dp"
+    android:paddingTop="0dp"
+    android:paddingEnd="5dp"
+    android:paddingBottom="0dp"
+    tools:background="#000000"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <LinearLayout
+        android:id="@+id/ll_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:background="#42FFFFFF"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="6dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_record"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/rckit_ic_voice" />
+
+        <TextView
+            android:id="@+id/tv_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="聊聊吧..."
+            android:textColor="#CCFFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!--    <include-->
+    <!--        android:id="@+id/cl_request_seat"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:layout="@layout/rckit_item_action"-->
+    <!--        android:visibility="visible"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/ll_chat"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ll_chat"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_action"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal"
+            app:constraint_referenced_ids="ll_chat"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="2"
+            tools:listitem="@layout/rckit_item_action" />
+    </FrameLayout>
+
+
+</merge>
