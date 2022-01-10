@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.rongcloud.kitdemo">
+    package="cn.rongcloud.chatroomkitdemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -24,7 +24,6 @@
         </activity>
 
         <activity android:name="cn.rongcloud.kitdemo.chatroomkit.ChatRoomKitActivity" />
-        <activity android:name="cn.rongcloud.kitdemo.musiccontrolkit.MusicControlKitActivity" />
 
         <meta-data
             android:name="HIFIVE_APPID"

@@ -5,6 +5,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import cn.rongcloud.chatroomkitdemo.R;
 import cn.rongcloud.kitdemo.chatroomkit.ChatRoomKitActivity;
 
 public class MainActivity extends AppCompatActivity {

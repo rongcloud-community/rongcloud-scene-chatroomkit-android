@@ -16,11 +16,11 @@ import cn.rongcloud.chatroomkit.api.OnMessageContentClickListener;
 import cn.rongcloud.chatroomkit.bean.MessageItem;
 import cn.rongcloud.chatroomkit.utils.MessageContentUtils;
 import cn.rongcloud.chatroomkit.widget.CenterAlignImageSpan;
+import cn.rongcloud.chatroomkitdemo.R;
 import cn.rongcloud.corekit.bean.RCColor;
 import cn.rongcloud.corekit.bean.RCCorner;
 import cn.rongcloud.corekit.utils.UiUtils;
 import cn.rongcloud.kitdemo.MyApplication;
-import cn.rongcloud.kitdemo.R;
 
 /**
  * Created by gyn on 2021/11/19

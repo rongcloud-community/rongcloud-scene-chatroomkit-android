@@ -6,7 +6,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "cn.rongcloud.scenekitdemo"
+        applicationId "cn.rongcloud.chatroomkitdemo"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

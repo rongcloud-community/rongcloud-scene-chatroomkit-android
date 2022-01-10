@@ -19,7 +19,7 @@ import cn.rongcloud.chatroomkit.manager.AudioRecordManager;
 import cn.rongcloud.chatroomkit.widget.ChatRoomView;
 import cn.rongcloud.chatroomkit.widget.InputBar;
 import cn.rongcloud.chatroomkit.widget.ToolBar;
-import cn.rongcloud.kitdemo.R;
+import cn.rongcloud.chatroomkitdemo.R;
 
 /**
  * Created by gyn on 2021/11/23
