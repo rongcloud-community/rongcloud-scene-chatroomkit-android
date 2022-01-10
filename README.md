@@ -39,7 +39,7 @@ ChatRoomView chatRoomView = findViewById(R.id.chat_room_view);
 - ToolBar 底部功能栏
 - InputBar 输入框
 
-![alt(height=300)](../imgs/pic_1.jpeg)
+![alt(height=300)](./imgs/pic_1.jpeg)
 
 ### MessageView 相关设置和监听
 
