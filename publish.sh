@@ -1,3 +1,3 @@
-./gradlew :CoreKit:clean
-./gradlew :CoreKit:assemble
-./gradlew :CoreKit:uploadArchives
+./gradlew :ChatRoomKit:clean
+./gradlew :ChatRoomKit:assemble
+./gradlew :ChatRoomKit:uploadArchives

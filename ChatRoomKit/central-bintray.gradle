@@ -1,0 +1,118 @@
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+
+Properties properties = new Properties()
+properties.load(project.file('local.properties').newDataInputStream())
+
+def PROJ_GROUP = properties.getProperty('PROJ_GROUP')
+def PROJ_ARTIFACTID = properties.getProperty('PROJ_ARTIFACTID')
+def PROJ_NAME = properties.getProperty('PROJ_NAME')
+def PROJ_VERSION = properties.getProperty('PROJ_VERSION')
+def CENTRAL_USER = properties.getProperty('CENTRAL_USER')
+def CENTRAL_KEY = properties.getProperty('CENTRAL_KEY')
+
+ext.'signing.keyId' = properties.getProperty('SIGNING_KEY_ID')
+ext.'signing.password' = properties.getProperty('SIGNING_PASSWORD')
+ext.'signing.secretKeyRingFile' = properties.getProperty('SIGNING_SECRET_KEY_FILE')
+
+version = PROJ_VERSION
+project.archivesBaseName = PROJ_ARTIFACTID
+def CENTRAL_URL = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+def CENTRAL_SNAP_URL = 'https://oss.sonatype.org/content/repositories/snapshots/'
+
+
+task sourcesJar(type: Jar) {
+    from 'jcenter_src'
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = 'jcenter_src'
+    classpath += configurations.compile
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+task syncJavadoc(type: Sync, dependsOn: javadoc) {
+    from javadoc.destinationDir
+    into rootProject.file('docs')
+}
+
+javadoc {
+    options {
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        title "$PROJ_NAME $PROJ_VERSION"
+        String packageListRef = "${android.sdkDirectory}/docs/reference/"
+        linksOffline 'http://d.android.com/reference/', packageListRef
+    }
+    include()
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment {
+                MavenDeployment deployment -> signing.signPom(deployment)
+            }
+
+            repository(url: CENTRAL_URL) {
+                authentication(userName: CENTRAL_USER, password: CENTRAL_KEY)
+
+            }
+
+            snapshotRepository(url: CENTRAL_SNAP_URL) {
+                authentication(userName: CENTRAL_USER, password: CENTRAL_KEY)
+            }
+
+            pom.project {
+                name PROJ_NAME
+                version PROJ_VERSION
+                artifactId PROJ_ARTIFACTID
+                groupId PROJ_GROUP
+                packaging 'aar'
+                description 'a rongcloud sdk'
+                url 'https://www.rongcloud.cn'
+
+                scm {
+                    connection 'https://github.com/rongcloud'
+                    developerConnection 'https://github.com/rongcloud'
+                    url 'https://www.rongcloud.cn'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'repo'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'rongcloud_developer'
+                        name 'rongcloud'
+                        email 'rongcloud@rongcloud.cn'
+                    }
+                }
+            }.whenConfigured { pom -> pom.dependencies.clear() }
+        }
+    }
+}

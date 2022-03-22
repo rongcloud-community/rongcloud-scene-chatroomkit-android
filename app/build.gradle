@@ -49,12 +49,17 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation project(path: ':ChatRoomKit')
 
     // 模拟语聊房需要的库
-    implementation 'cn.rongcloud.sdk:voiceroom_lib:2.0.0'
-    implementation 'cn.rongcloud.sdk:im_lib:5.1.5'
-    implementation 'cn.rongcloud.sdk:rtc_lib:5.1.10'
+    // 语聊房SDK
+    implementation 'cn.rongcloud.sdk:voiceroom_lib:2.0.8'
+    // im SDK
+    implementation 'cn.rongcloud.sdk:im_lib:5.1.8.2'
+    // rtc SDK
+    implementation 'cn.rongcloud.sdk:rtc_lib:5.1.17.3'
 
-    implementation 'cn.rongcloud.sdk:rccorekit_lib:0.0.1'
+    // kit基础库
+    implementation 'cn.rongcloud.sdk:rccorekit_lib:1.0.0'
+    // 本地源码依赖
+    implementation project(path: ':ChatRoomKit')
 }

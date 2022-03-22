@@ -1,6 +1,77 @@
-# ChatRoomKit 文档
+<h1 align="center"> 场景化聊天室 </h>
 
-## 将 `ChatRoomView` 放在项目的布局文件中，并在 Activity 中初始化
+<p align="center">
+<a href="https://github.com/rongcloud-community/rongcloud-scene-chatroomkit-android">
+<img alt="Maven Central" src="https://img.shields.io/maven-central/v/cn.rongcloud.sdk/rcchatroomkit_lib">
+</a>
+
+<a href="https://github.com/rongcloud-community/rongcloud-scene-chatroomkit-android">
+<img src="https://img.shields.io/cocoapods/l/RCSceneChatroomKit.svg?style=flat">
+</a>
+
+<a href="https://github.com/rongcloud-community/rongcloud-scene-chatroomkit-android">
+<img src="https://img.shields.io/badge/%20in-java%208-orange.svg">
+</a>
+
+</p>
+
+## 简介
+
+场景话聊天室 Kit 是融云为开发者提供的开源项目，适用于语聊房、电台语音、视频直播等常见社交场景，Kit 封装聊天室消息列表、底部功能栏、输入框等常见的 UI 组件，并且，开发者可以通过 JSON
+配置文件自定义 UI 属性，也可以通过远端动态配置。
+
+## 集成
+
+### maven仓库集成
+
+1. 在 project 的 build.gradle 添加融云仓库
+
+```
+allprojects {
+    repositories {
+        // 融云 maven 仓库
+        maven { url "https://maven.rongcloud.cn/repository/maven-releases/" }
+    }
+}
+```
+
+2. module 的 build.gradle 文件中的 dependencies 节点添加如下代码：
+
+```
+dependencies {
+    // kit基础lib
+    implementation 'cn.rongcloud.sdk:rccorekit_lib:1.0.0'
+    // 聊天室lib
+    implementation 'cn.rongcloud.sdk:rcchatroomkit_lib:0.0.3'
+}
+```
+
+### 本地依赖集成
+
+下载源码，把 `ChatRoomKit` 作为Module依赖到项目中
+
+## 功能
+
+场景化聊天室内部按功能分为三个部分：
+
+- 消息列表
+  <img src= "https://tva1.sinaimg.cn/large/e6c9d24ely1h0e70qlxujj20ku112427.jpg"  height="375" alt="RCSceneChatroomKit">
+
+- 功能栏
+  <img src= "https://tva1.sinaimg.cn/large/e6c9d24ely1h0e71gh5cwj20ku112422.jpg"  height="375" alt="RCSceneChatroomKit">
+
+- 输入框：
+
+<img src= "https://tva1.sinaimg.cn/large/e6c9d24ely1h0e71zhmqxj20ku112n03.jpg"  height="375" alt="RCSceneChatroomKit">
+
+## 配置项
+
+场景化聊天室可以通过 JSON 文件进行 UI 配置，可参照 `ChatRoomKit` 下 assets 文件夹下的 `ChatRoomKit.json`
+,如果是远程依赖可以复制一份 `ChatRoomKit.json` 放在项目app下的 assets 下做修改，如果是本地依赖可直接修改。
+
+## 使用
+
+### 将 `ChatRoomView` 放在项目的布局文件中，并在 Activity 中初始化
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -31,15 +102,13 @@
 ChatRoomView chatRoomView = findViewById(R.id.chat_room_view);
 ```
 
-## `ChatRoomView` 使用
+### `ChatRoomView` 使用
 
 `ChatRoomView` 内部包含三个自定义 View，通过 ChatRoomView 提供的 api 可以操作其中的数据及 UI
 
 - MessageView 展示消息列表
 - ToolBar 底部功能栏
 - InputBar 输入框
-
-![alt(height=300)](./imgs/pic_1.jpeg)
 
 ### MessageView 相关设置和监听
 
@@ -61,6 +130,10 @@ public class RCChatroomMessage implements IRCChatroomMessage {
      * 消息内容
      */
     private String message;
+    /**
+     * 消息体富文本
+     */
+    private SpannableStringBuilder spannableStringBuilder;
 
     /**
      * 构造方法
@@ -77,30 +150,25 @@ public class RCChatroomMessage implements IRCChatroomMessage {
      * @return 返回气泡背景颜色，返回 null 采用默认配置
      */
     @Override
-    public Argb bubbleColor() {
-        return new Argb(0.5f, 100, 100, 100);
+    public RCColor bubbleColor() {
+        return new RCColor(0.5f, 100, 100, 100);
     }
 
     /**
      * @return 返回气泡文字颜色，返回 null 采用默认配置
      */
     @Override
-    public Argb bubbleTextColor() {
-        return new Argb(0.7f, 255, 255, 255);
+    public RCColor bubbleTextColor() {
+        return new RCColor(0.7f, 255, 255, 255);
     }
 
     /**
      * @return 返回气泡圆角，返回 null 采用默认配置
      */
     @Override
-    public Corner bubbleCorner() {
-        return new Corner(0, 15, 15, 15);
+    public RCCorner bubbleCorner() {
+        return new RCCorner(0, 15, 15, 15);
     }
-
-    /**
-     * 消息体富文本
-     */
-    private SpannableStringBuilder spannableStringBuilder;
 
     /**
      * 构建消息体富文本
@@ -121,7 +189,7 @@ public class RCChatroomMessage implements IRCChatroomMessage {
             // 可以添加带icon的富文本
             SpannableString iconString = new SpannableString("  ");
             Drawable drawable = ContextCompat.getDrawable(MyApplication.app, R.drawable.ic_creator);
-            int iconSize = UiUtils.dp2px(MyApplication.app, 11);
+            int iconSize = UiUtils.dp2px(11);
             drawable.setBounds(0, 0, iconSize, iconSize);
             iconString.setSpan(new CenterAlignImageSpan(drawable), 0, 1, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
             messageItemList.add(new MessageItem<>(iconString));
@@ -158,6 +226,7 @@ public class RCChatroomVoice implements IRCChatroomVoiceMessage {
      * 用户 id
      */
     private String userId;
+    private SpannableStringBuilder spannableStringBuilder;
 
     public RCChatroomVoice(File file, long duration, String userName, String userId) {
         this.file = file;
@@ -167,24 +236,23 @@ public class RCChatroomVoice implements IRCChatroomVoiceMessage {
     }
 
     @Override
-    public Argb bubbleColor() {
+    public RCColor bubbleColor() {
         return null;
     }
 
     @Override
-    public Argb bubbleTextColor() {
+    public RCColor bubbleTextColor() {
         return null;
     }
 
     @Override
-    public Corner bubbleCorner() {
+    public RCCorner bubbleCorner() {
         return null;
     }
-
-    private SpannableStringBuilder spannableStringBuilder;
 
     /**
      * 构建消息体，参考富文本消息
+     *
      * @param clickSpan
      * @return
      */
@@ -332,3 +400,7 @@ chatRoomView.setInputBarListener(new InputBar.InputBarListener() {
     }
 });
 ```
+
+## 其他
+
+如有任何疑问请提交 issue
