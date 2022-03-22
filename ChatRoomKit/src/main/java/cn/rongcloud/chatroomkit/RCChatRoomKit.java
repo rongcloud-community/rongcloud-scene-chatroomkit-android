@@ -18,16 +18,14 @@ import cn.rongcloud.corekit.utils.VMLog;
 public class RCChatRoomKit extends RCKitInit<ChatRoomKitConfig> {
     private static final String TAG = RCChatRoomKit.class.getSimpleName();
 
-    private final static Holder holder = new Holder();
-
     private String voicePath;
 
     public static RCChatRoomKit getInstance() {
-        return holder.instance;
+        return Holder.INSTANCE;
     }
 
     private static class Holder {
-        private RCChatRoomKit instance = new RCChatRoomKit();
+        private final static RCChatRoomKit INSTANCE = new RCChatRoomKit();
     }
 
     @Override
