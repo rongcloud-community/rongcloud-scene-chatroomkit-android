@@ -36,5 +36,5 @@ dependencies {
     // https://github.com/vanniktech/Emoji
     implementation 'com.vanniktech:emoji-ios:0.8.0'
 
-    compileOnly 'cn.rongcloud.sdk:rccorekit_lib:0.0.1'
+    compileOnly 'cn.rongcloud.sdk:rccorekit_lib:1.0.0'
 }
