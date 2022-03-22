@@ -42,7 +42,7 @@ dependencies {
     // kit基础lib
     implementation 'cn.rongcloud.sdk:rccorekit_lib:1.0.0'
     // 聊天室lib
-    implementation 'cn.rongcloud.sdk:rcchatroomkit_lib:0.0.3'
+    implementation 'cn.rongcloud.sdk:rcchatroomkit_lib:0.0.1'
 }
 ```
 
@@ -55,14 +55,16 @@ dependencies {
 场景化聊天室内部按功能分为三个部分：
 
 - 消息列表
+
   <img src= "https://tva1.sinaimg.cn/large/e6c9d24ely1h0e70qlxujj20ku112427.jpg"  height="375" alt="RCSceneChatroomKit">
 
 - 功能栏
+
   <img src= "https://tva1.sinaimg.cn/large/e6c9d24ely1h0e71gh5cwj20ku112422.jpg"  height="375" alt="RCSceneChatroomKit">
 
 - 输入框：
 
-<img src= "https://tva1.sinaimg.cn/large/e6c9d24ely1h0e71zhmqxj20ku112n03.jpg"  height="375" alt="RCSceneChatroomKit">
+  <img src= "https://tva1.sinaimg.cn/large/e6c9d24ely1h0e71zhmqxj20ku112n03.jpg"  height="375" alt="RCSceneChatroomKit">
 
 ## 配置项
 
@@ -389,7 +391,7 @@ chatRoomView.setInputBarListener(new InputBar.InputBarListener() {
             return;
         }
         // 这里可以把发送的消息主动添加到消息列表
-        chatRoomView.addMessage(new RCChatroomMessage(message));
+        chatRoomView.addMessage(new RCChnatroomMessage(message));
     }
 
     @Override
